@@ -49,7 +49,7 @@ void MainWindow::on_com_clicked()
 
     try
     {
-        client.commit(svn::Targets(ui->path->text().toStdString().c_str()),"",false);
+        client.commit(svn::Targets(ui->path->text().toStdString().c_str()),context.getLogMessage(),false);
     }
     catch (svn::ClientException & error)
     {
@@ -67,14 +67,19 @@ void MainWindow::on_com_clicked()
     }
 
     QMessageBox::information(this, "Commit réussi !", "Le commit a réussi.");
+
 }
 
 void MainWindow::on_parcourir_clicked()
 {
+
     ui->path->setText(QFileDialog::getExistingDirectory(this));
+
 }
 
 MainWindow::~MainWindow()
 {
+
     delete ui;
+
 }
