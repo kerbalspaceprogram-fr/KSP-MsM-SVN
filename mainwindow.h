@@ -5,8 +5,6 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QTime>
-#include <QtGlobal>
-#include <QtDebug>
 #include <QRegExpValidator>
 #include <client.hpp>
 #include <targets.hpp>
